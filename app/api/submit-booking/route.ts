@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { schoolName, contactName, contactEmail, selectedDate } = body
+    const { schoolName, contactName, contactEmail, contactPhone, comments, selectedDate } = body
 
     // Validate input
     if (!schoolName || !contactName || !contactEmail || !selectedDate) {
@@ -41,6 +41,8 @@ export async function POST(request: NextRequest) {
         school_name: schoolName,
         contact_name: contactName,
         contact_email: contactEmail,
+        contact_phone: contactPhone,
+        comments: comments,
       })
 
     if (insertError) {

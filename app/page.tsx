@@ -31,7 +31,7 @@ export default async function Page() {
     <div className="h-screen bg-background text-foreground flex flex-col overflow-hidden">
       {/* Header Section */}
       <header className="border-b border-border bg-background flex-shrink-0">
-        <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
           <div className="space-y-0.5">
             <h1 className="text-lg sm:text-xl font-bold text-foreground">
               Δραστηριότητες Γεωλογίας και Γεωπεριβάλλοντος
@@ -40,6 +40,7 @@ export default async function Page() {
               2-6 Φεβρουαρίου 2026
             </p>
           </div>
+          <img src="https://www.geol.uoa.gr/typo3conf/ext/uoa_website/Resources/Public/Images/footer_logo.png" alt="University Logo" className="h-12" />
         </div>
       </header>
 
@@ -49,12 +50,13 @@ export default async function Page() {
           <div className="space-y-4 sm:space-y-5">
             {/* Introduction */}
             <div className="text-center space-y-1.5">
+              <img src="https://www.geol.uoa.gr/fileadmin/uploads/tx_gridelements/logo_geol_01.png" alt="Department Logo" className="mx-auto h-24" />
               <h2 className="text-lg sm:text-xl font-semibold">
                 Επιλέξτε Ημερομηνία
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Παρακαλούμε επιλέξτε μία από τις διαθέσιμες ημερομηνίες για το σχολείο σας.
-                Κάθε ημερομηνία έχει περιορισμένες θέσεις (μέγιστο 2 σχολεία).
+                Κάθε ημερομηνία έχει περιορισμένες θέσεις (μέγιστο 2 σχολεία, 60 μαθητές ανά σχολείο).
               </p>
             </div>
 
@@ -78,6 +80,9 @@ export default async function Page() {
             </p>
             <p className="text-xs text-muted-foreground">
               Email: contact@geol.uoa.gr
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Copyright © 2025 Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Δραστηριότητες Γεωλογίας και Γεωπεριβάλλοντος',
+  title: 'Open Week',
 }
 
 export const viewport: Viewport = {

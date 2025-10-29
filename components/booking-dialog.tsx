@@ -23,11 +23,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
 
 const schema = z.object({
   schoolName: z.string().min(2, "Το όνομα του σχολείου είναι υποχρεωτικό"),
   contactName: z.string().min(2, "Το όνομα επικοινωνίας είναι υποχρεωτικό"),
   contactEmail: z.string().email("Μη έγκυρη διεύθυνση email").min(1, "Το email είναι υποχρεωτικό"),
+  contactPhone: z.string().optional(),
+  comments: z.string().optional(),
 })
 
 type FormData = z.infer<typeof schema>
@@ -51,6 +54,8 @@ export function BookingDialog({
       schoolName: "",
       contactName: "",
       contactEmail: "",
+      contactPhone: "",
+      comments: "",
     },
   })
 
@@ -150,11 +155,47 @@ export function BookingDialog({
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-sm font-semibold text-foreground">
-                      Όνομα Επικοινωνίας *
+                      Όνομα Υπευθύνου Επικοινωνίας *
                     </FormLabel>
                     <FormControl>
                       <Input
                         className="h-10 rounded-md"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="contactPhone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-semibold text-foreground">
+                      Τηλέφωνο Επικοινωνίας
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        className="h-10 rounded-md"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="comments"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm font-semibold text-foreground">
+                      Σχόλια
+                    </FormLabel>
+                    <FormControl>
+                      <Textarea
+                        className="min-h-[100px] rounded-md"
                         {...field}
                       />
                     </FormControl>
